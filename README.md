@@ -13,3 +13,7 @@ ng serve
 ## Dados para consumir
 
 Os dados são fornecidos pelo backend, ele precisa estar rodando para o frontend funcionar devidamente
+
+### Url default
+
+O URL default é http://localhost:4200/
