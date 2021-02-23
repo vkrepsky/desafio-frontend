@@ -17,9 +17,6 @@ export class UserService {
     return this.http.get(this.getUrl+'/documento?id='+id);
   }
 
-  //getUserList(): Observable<any> {
-  //  return this.http.get(this.getUrl+'/all');
-  //}
   getUserByName(nome: string): Observable<any> {
     return this.http.get(this.getUrl+'/nome?nome='+nome);
   }
@@ -28,20 +25,18 @@ export class UserService {
     return this.http.get(this.getUrl+'/telefone?telefone='+telefone);
   }
 
-  createUser(user: Object): Observable<Object> { // salve
+  createUser(user: Object): Observable<Object> { 
     return this.http.post(this.setUrl, user);
   }
 
   updateUser(user: User): Observable<Object> {
-    console.log("aehou");
-    console.log(user);
     return this.http.put(this.setUrl+'?id='+user.id, user);
   }
 
   deleteUser(id: number): Observable<any> {
     return this.http.delete(this.setUrl+'?id='+id);
   }
-  //return this.http.delete('${this.setUrl}/${id}', { responseType: 'text' });
+ 
 
   getUsersHospedados(): Observable<any> {
     return this.http.get(this.getUrl+'/hospedados');

@@ -30,10 +30,6 @@ export class UpdateUserComponent implements OnInit {
   }
 
   updateUser(){
-   
-    this.user.id
-    console.log('params id '+ this.route.snapshot.params['id'])
-    console.log('id '+this.user.id)
     this.userService.updateUser(this.user).subscribe(data => {
       this.user = new User();
       this.list();

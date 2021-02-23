@@ -25,7 +25,6 @@ export class UserListComponent implements OnInit {
   }
 
   getByDocumento(id: number){
-    console.log('foi');
     this.users = this.userService.getUser(id);
   }
 

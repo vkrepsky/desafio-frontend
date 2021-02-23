@@ -41,11 +41,11 @@
         <tbody >
           
           <tr *ngFor="let user of users | async" >   <!-- <tr *ngFor="let user of users | async">-->
-            <td >{{user.documento}}</td>
+            <td>{{user.documento}}</td>
             <td>{{user.nome}}</td>
             <td>{{user.telefone}}</td>
-            <td>{{user.dataCheckIn}}</td>
-            <td>{{user.dataCheckOut}}</td>
+            <td>{{user.dataCheckIn}}</td> 
+            <td >{{user.dataCheckOut}}</td> 
             <td>{{user.adicionalVeiculo}}</td>
             <td>{{user.valor}}</td>
             <td>{{user.hospedado}}</td>
