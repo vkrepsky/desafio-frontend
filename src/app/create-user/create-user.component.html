@@ -1,0 +1,36 @@
+<h3>Registrar Usuario</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="nome" required [(ngModel)]="user.nome" name="nome">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Telefone</label>
+      <input type="text" class="form-control" id="telefone" required [(ngModel)]="user.telefone" name="telefone">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Data de checkIn</label>
+      <input type="datetime-local"  class="form-control" id="checkIn" required [(ngModel)]="user.dataCheckIn" name="checkIn">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Data de checkOut</label>
+        <input type="datetime-local"  class="form-control" id="checkOut" required [(ngModel)]="user.dataCheckOut" name="checkOut">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Adicional Veiculo</label>
+        <input type="checkbox" style="margin-left: 20px;" id="adicionalVeiculo" required [(ngModel)]="user.adicionalVeiculo" name="adicionalVeiculo">
+      </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Sucesso!</h4>
+  <!-- <button class="btn btn-success" (click)="newUser()">Add</button> -->
+</div>

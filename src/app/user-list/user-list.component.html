@@ -1,0 +1,66 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Lista de Hospedes</h2>
+    </div>
+    <div > 
+ 
+      <form name="demo">
+        <label style="margin-left: 10px;">
+          Todos
+          <input type="radio" id="todos"  value="todos" name="opcoes"  (click)="loadData()" checked>
+        </label>
+        <label style="margin-left: 10px;">
+          Ainda presentes
+          <input type="radio" id="hospedado"  value="hospedado" name="opcoes" (click)="getHospedados()">
+        </label>
+        <label style="margin-left: 10px;">
+          Não mais presentes
+          <input type="radio" id="nHospedado"  value="nHospedado" name="opcoes" (click)="getNaoHospedados()">
+        </label>
+      </form>
+      <p style="margin-left: 10px;">procurar por...</p>
+      <input type="number" #myInput1 placeholder="documento" (keydown.enter)="getByDocumento(myInput1.value)">
+      <input type="text"  #myInput2 placeholder="nome" (keydown.enter)="getByName(myInput2.value)" style="margin-left: 40px;">
+      <input type="text"  #myInput3 placeholder="telefone" (keydown.enter)="getByTelefone(myInput3.value)" style="margin-left: 40px;">
+      <div class="currentValue"></div>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Documento</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Data de checkIn</th>
+            <th>Data de checkOut</th>
+            <th>+ veiculo</th>
+            <th>Valor (R$)</th>
+            <th>Hospedado</th>
+          </tr>
+        </thead>
+        <tbody >
+          
+          <tr *ngFor="let user of users | async" >   <!-- <tr *ngFor="let user of users | async">-->
+            <td >{{user.documento}}</td>
+            <td>{{user.nome}}</td>
+            <td>{{user.telefone}}</td>
+            <td>{{user.dataCheckIn}}</td>
+            <td>{{user.dataCheckOut}}</td>
+            <td>{{user.adicionalVeiculo}}</td>
+            <td>{{user.valor}}</td>
+            <td>{{user.hospedado}}</td>
+
+            
+            <td><button (click)="deleteUser(user.documento)"  style="margin-bottom: 10px;">Deletar</button>
+                <button (click)="updateUser(user.documento)">Alterar</button>
+            </td>
+          
+            
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+ <script> 
+
+</script>
